@@ -1,29 +1,29 @@
 package code.mission;
 
 public class Grid {
-	int c;
-	int k;
-	int n;
-	int m;
-	int ex, ey;
-	int sx, sy;
-	int[] x;
-	int[] y;
-	int[] h;
+    int c;
+    int k;
+    int n;
+    int m;
+    int ex, ey;
+    int sx, sy;
+    int[] x;
+    int[] y;
+    int[] h;
 
-	public Grid(int c, int k, int n, int m, int ex, int ey, int sx, int sy, int[] x, int[] y, int[] h) {
-		this.c = c;
-		this.k = k;
-		this.n = n;
-		this.m = m;
-		this.ex = ex;
-		this.ey = ey;
-		this.sx = sx;
-		this.sy = sy;
-		this.x = x;
-		this.y = y;
-		this.h = h;
-	}
+    public Grid(int c, int k, int n, int m, int ex, int ey, int sx, int sy, int[] x, int[] y, int[] h) {
+        this.c = c;
+        this.k = k;
+        this.n = n;
+        this.m = m;
+        this.ex = ex;
+        this.ey = ey;
+        this.sx = sx;
+        this.sy = sy;
+        this.x = x;
+        this.y = y;
+        this.h = h;
+    }
 
 	@Override
 	public String toString() {
@@ -63,20 +63,15 @@ public class Grid {
 		return new Grid(c[0], k, n, m, ex, ey, sx, sy, x, y, h);
 	}
 
-	public static int[] splitUnparse(String s) {
-		String[] tmp = s.split(",");
-		int[] ans = new int[tmp.length];
-		for (int i = 0; i < ans.length; i++)
-			ans[i] = Integer.parseInt(tmp[i]);
-		return ans;
-	}
+    public static int[] splitUnparse(String s) {
+        String[] tmp = s.split(",");
+        int[] ans = new int[tmp.length];
+        for (int i = 0; i < ans.length; i++)
+            ans[i] = Integer.parseInt(tmp[i]);
+        return ans;
+    }
 
-	public int getOriginalHealth(int i) {
-		return h[i];
-	}
-	
-	public static void main(String[] args) {
-		Grid g = MissionImpossible.genGrid();
-		System.out.println(g);
-	}
+    public int getOriginalHealth(int i) {
+        return h[i];
+    }
 }
