@@ -28,7 +28,7 @@ public class Grid {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(m + "," + n + ";").append(ex + "," + ey + ";").append(sx + "," + sy + ";");
+		sb.append(n + "," + m + ";").append(ex + "," + ey + ";").append(sx + "," + sy + ";");
 		for (int i = 0; i < x.length - 1; ++i)
 			sb.append(x[i] + "," + y[i] + ",");
 		if (x.length > 0)
@@ -44,7 +44,7 @@ public class Grid {
 	public static Grid unparse(String grid) {
 		String[] params = grid.split(";");
 		int[] a = splitUnparse(params[0]);
-		int m = a[0], n = a[1];
+		int n = a[0], m = a[1];
 		int[] e = splitUnparse(params[1]);
 		int ex = e[0], ey = e[1];
 		int[] s = splitUnparse(params[2]);
@@ -73,5 +73,10 @@ public class Grid {
 
 	public int getOriginalHealth(int i) {
 		return h[i];
+	}
+	
+	public static void main(String[] args) {
+		Grid g = MissionImpossible.genGrid();
+		System.out.println(g);
 	}
 }
