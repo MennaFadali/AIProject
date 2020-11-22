@@ -4,7 +4,7 @@ import code.generic.HeuristicFunction;
 import code.generic.Node;
 
 // H1 is the first heuristic function.
-// It calculates the Manhattan Distance between the current position and the submarine's position
+// It evaluates based on the remaining IMFs to be picked then on the Manhattan distance
 public class H1 implements HeuristicFunction {
 
     int sx, sy;
@@ -18,6 +18,8 @@ public class H1 implements HeuristicFunction {
     public int getHn(Node node) {
         MissionImpossibleState state = (MissionImpossibleState) node.getState();
         int cx = state.x, cy = state.y;
-        return Math.abs(cx - sx) + Math.abs(cy - sy);
+        int safeIMFs = Integer.bitCount(state.safe);
+        int manhattandistance = Math.abs(cx - sx) + Math.abs(cy - sy);
+        return -(safeIMFs * 100 + manhattandistance);
     }
 }
