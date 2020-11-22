@@ -14,6 +14,7 @@ public class MissionImpossibleProblem implements Problem {
     Grid grid;
     short[][][][][] memo;
     int n, m;
+    int expandedNodes;
     ArrayList<Operator> operators;
 
     public MissionImpossibleProblem(Grid grid) {
@@ -21,11 +22,7 @@ public class MissionImpossibleProblem implements Problem {
         this.n = grid.n;
         this.m = grid.m;
         memo = new short[grid.c + 1][grid.n][grid.m][600][1 << grid.k];
-        for (short[][][][] mmmm : memo)
-            for (short[][][] mmm : mmmm)
-                for (short[][] mm : mmm)
-                    for (short[] mc : mm)
-                        Arrays.fill(mc, UNCALC);
+        clearMemo();
     }
 
     @Override
@@ -195,18 +192,8 @@ public class MissionImpossibleProblem implements Problem {
         MissionImpossibleState mState = (MissionImpossibleState) n.getState();
         MissionImpossibleState newState = new MissionImpossibleState();
         newState.time = mState.time + 1;
-
-        if (!safe(mState.x, mState.y, dx, dy)) {
-//			newState.x = mState.x;
-//			newState.y = mState.y;
-//			newState.carrying = mState.carrying;
-//			newState.safe = mState.safe;
-//			newState.totalDamage = evalDamage(mState.totalDamage, newState.safe, newState.time);
-//			newState.dead = evalDead(mState.dead, newState.safe, newState.time);
-//			Node newNode = new Node(newState, n, operators.get(opIdx), evalDepth(n.getDepth()), evalCost(newState));
+        if (!safe(mState.x, mState.y, dx, dy))
             return null;
-        }
-
         newState.x = mState.x + dx;
         newState.y = mState.y + dy;
         newState.carrying = mState.carrying;
@@ -276,6 +263,16 @@ public class MissionImpossibleProblem implements Problem {
         memo[mState.carrying][mState.x][mState.y][mState.time][mState.safe] = (short) val;
     }
 
+    @Override
+    public int getExpandedNodes() {
+        return expandedNodes;
+    }
+
+    @Override
+    public void incrementExpandedNodes() {
+        expandedNodes++;
+    }
+
     public boolean allSafe(int safe) {
         int imfCount = grid.k;
         return Integer.bitCount(safe) == imfCount;
@@ -295,5 +292,12 @@ public class MissionImpossibleProblem implements Problem {
                 c++;
         return c;
     }
-
+    
+    public void clearMemo () {
+        for (short[][][][] mmmm : memo)
+            for (short[][][] mmm : mmmm)
+                for (short[][] mm : mmm)
+                    for (short[] mc : mm)
+                        Arrays.fill(mc, UNCALC);
+    }
 }

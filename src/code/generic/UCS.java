@@ -6,7 +6,6 @@ import java.util.PriorityQueue;
 
 public class UCS implements QngFn {
 
-    int expandedNodes;
     Problem problem;
 
     public UCS(Problem problem) {
@@ -28,13 +27,9 @@ public class UCS implements QngFn {
         return pq;
     }
 
-    public int getExpandedNodes() {
-        return expandedNodes;
-    }
-
     @Override
     public Node removeFront(PriorityQueue<Node> pq) {
-        expandedNodes++;
+        problem.incrementExpandedNodes();
         Node top = pq.remove();
         while (problem.getStateVal(top.getState()) < problem.pathCost(top, top))
             top = pq.remove();
