@@ -6,7 +6,6 @@ import java.util.PriorityQueue;
 
 public class BFS implements QngFn {
 
-    int expandedNodes;
     Problem problem;
 
     public BFS(Problem problem) {
@@ -28,7 +27,7 @@ public class BFS implements QngFn {
 
     @Override
     public Node removeFront(PriorityQueue<Node> pq) {
-        expandedNodes++;
+        problem.incrementExpandedNodes();
         return pq.remove();
     }
 
@@ -42,10 +41,6 @@ public class BFS implements QngFn {
             }
         }
 
-    }
-
-    public int getExpandedNodes() {
-        return expandedNodes;
     }
 
 }

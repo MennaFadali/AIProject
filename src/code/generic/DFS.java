@@ -6,7 +6,6 @@ import java.util.PriorityQueue;
 
 public class DFS implements QngFn {
 
-    int expandedNodes;
     Problem problem;
 
     public DFS(Problem problem) {
@@ -30,7 +29,7 @@ public class DFS implements QngFn {
 
     @Override
     public Node removeFront(PriorityQueue<Node> pq) {
-        expandedNodes++;
+        problem.incrementExpandedNodes();
         return pq.remove();
     }
 
@@ -44,11 +43,6 @@ public class DFS implements QngFn {
             }
         }
 
-    }
-
-
-    public int getExpandedNodes() {
-        return expandedNodes;
     }
 
 
