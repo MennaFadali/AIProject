@@ -5,6 +5,7 @@ import java.util.Stack;
 
 import code.generic.BFS;
 import code.generic.DFS;
+import code.generic.Greedy;
 import code.generic.Node;
 import code.generic.SearchProblem;
 import code.generic.UCS;
@@ -70,6 +71,16 @@ public class MissionImpossible extends SearchProblem {
 			UCS ucs = new UCS(prob);
 			Node goal = generalSearch(prob, ucs);
 			return tracePath(goal, g, ucs.getExpandedNodes());
+		}
+		if (strategy.equals("GR1")) {
+			Greedy gr = new Greedy(prob, new H1(g.sx, g.sy));
+			Node goal = generalSearch(prob, gr);
+			return tracePath(goal, g, gr.getExpandedNodes());
+		}
+		if (strategy.equals("GR2")) {
+			Greedy gr = new Greedy(prob, new H2(g));
+			Node goal = generalSearch(prob, gr);
+			return tracePath(goal, g, gr.getExpandedNodes());
 		}
 		return "INVALID INPUT";
 	}
