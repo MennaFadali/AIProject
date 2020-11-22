@@ -260,8 +260,8 @@ public class MissionImpossibleProblem implements Problem {
     }
 
     @Override
-    public long pathCost(Node lastOnPath) {
-        return lastOnPath.getCost();
+    public int pathCost(Node startNode, Node endNode) {
+        return endNode.getCost() - (startNode.getParent() != null ? startNode.getParent().getCost() : 0);
     }
 
     @Override

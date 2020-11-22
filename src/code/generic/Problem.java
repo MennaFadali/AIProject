@@ -11,10 +11,8 @@ public interface Problem {
 	abstract ArrayList<State> getStateSpace ();
 	
 	abstract boolean isGoal (State state);
-
-//	abstract boolean pathCost (ArrayList<Node> path);
-
-	abstract long pathCost(Node lastOnPath);
+	// Any path could be represented by the start node and the end node of the path
+	abstract int pathCost(Node startNode, Node endNode);
 	
 	abstract int getStateVal(State s);
 

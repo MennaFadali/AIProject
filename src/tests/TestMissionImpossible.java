@@ -20,160 +20,160 @@ public class TestMissionImpossible {
 	String grid14 = "14,14;13,9;1,13;5,3,9,7,11,10,8,3,10,7,13,6,11,1,5,2;76,30,2,49,63,43,72,1;6";
 	String grid15 = "15,15;5,10;14,14;0,0,0,1,0,2,0,3,0,4,0,5,0,6,0,7,0,8;81,13,40,38,52,63,66,36,13;1";
 	
-//	@Test
-//	public void testa1() throws Exception {
-//		String solution = MissionImpossible.solve(grid5, "BF", false);
-//		solution = solution.replace(" ", "");
-//		assertTrue(applyPlan(grid5, solution));
-//	}
-//
-//	@Test
-//	public void testa2() throws Exception {
-//		String solution = MissionImpossible.solve(grid6, "BF", false);
-//		solution = solution.replace(" ", "");
-//		assertTrue(applyPlan(grid6, solution));
-//	}
-//
-//	@Test
-//	public void testa3() throws Exception {
-//		String solution = MissionImpossible.solve(grid7, "BF", false);
-//		solution = solution.replace(" ", "");
-//		assertTrue(applyPlan(grid7, solution));
-//	}
-//
-//	@Test
-//	public void testa4() throws Exception {
-//		String solution = MissionImpossible.solve(grid8, "BF", false);
-//		solution = solution.replace(" ", "");
-//		assertTrue(applyPlan(grid8, solution));
-//	}
-//
-//	@Test
-//	public void testa5() throws Exception {
-//		String solution = MissionImpossible.solve(grid9, "BF", false);
-//		solution = solution.replace(" ", "");
-//		assertTrue(applyPlan(grid9, solution));
-//	}
-//
-//	@Test
-//	public void testa6() throws Exception {
-//		String solution = MissionImpossible.solve(grid10, "BF", false);
-//		solution = solution.replace(" ", "");
-//		assertTrue(applyPlan(grid10, solution));
-//	}
-//
-//	@Test
-//	public void testa7() throws Exception {
-//		String solution = MissionImpossible.solve(grid11, "BF", false);
-//		solution = solution.replace(" ", "");
-//		assertTrue(applyPlan(grid11, solution));
-//	}
-//
-//	@Test
-//	public void testa8() throws Exception {
-//		String solution = MissionImpossible.solve(grid12, "BF", false);
-//		solution = solution.replace(" ", "");
-//		assertTrue(applyPlan(grid12, solution));
-//	}
-//
-//	@Test
-//	public void testa9() throws Exception {
-//		String solution = MissionImpossible.solve(grid13, "BF", false);
-//		solution = solution.replace(" ", "");
-//		assertTrue(applyPlan(grid13, solution));
-//	}
-//
-//	@Test
-//	public void testa10() throws Exception {
-//		String solution = MissionImpossible.solve(grid14, "BF", false);
-//		solution = solution.replace(" ", "");
-//		assertTrue(applyPlan(grid14, solution));
-//	}
-//
-//	@Test
-//	public void testa11() throws Exception {
-//		String solution = MissionImpossible.solve(grid15, "BF", false);
-//		solution = solution.replace(" ", "");
-//		assertTrue(applyPlan(grid15, solution));
-//	}
-//
-//	@Test
-//	public void testb1() throws Exception {
-//		String solution = MissionImpossible.solve(grid5, "DF", false);
-//		solution = solution.replace(" ", "");
-//		assertTrue(applyPlan(grid5, solution));
-//	}
-//	
-//	@Test
-//	public void testb2() throws Exception {
-//		String solution = MissionImpossible.solve(grid6, "DF", false);
-//		solution = solution.replace(" ", "");
-//		assertTrue(applyPlan(grid6, solution));
-//	}
-//	
-//	@Test
-//	public void testb3() throws Exception {
-//		String solution = MissionImpossible.solve(grid7, "DF", false);
-//		solution = solution.replace(" ", "");
-//		assertTrue(applyPlan(grid7, solution));
-//	}
-//	
-//	@Test
-//	public void testb4() throws Exception {
-//		String solution = MissionImpossible.solve(grid8, "DF", false);
-//		solution = solution.replace(" ", "");
-//		assertTrue(applyPlan(grid8, solution));
-//	}
-//	
-//	@Test
-//	public void testb5() throws Exception {
-//		String solution = MissionImpossible.solve(grid9, "DF", false);
-//		solution = solution.replace(" ", "");
-//		assertTrue(applyPlan(grid9, solution));
-//	}
-//	
-//	@Test
-//	public void testb6() throws Exception {
-//		String solution = MissionImpossible.solve(grid10, "DF", false);
-//		solution = solution.replace(" ", "");
-//		assertTrue(applyPlan(grid10, solution));
-//	}
-//	
-//	@Test
-//	public void testb7() throws Exception {
-//		String solution = MissionImpossible.solve(grid11, "DF", false);
-//		solution = solution.replace(" ", "");
-//		assertTrue(applyPlan(grid11, solution));
-//	}
-//	
-//	@Test
-//	public void testb8() throws Exception {
-//		String solution = MissionImpossible.solve(grid12, "DF", false);
-//		solution = solution.replace(" ", "");
-//		assertTrue(applyPlan(grid12, solution));
-//	}
-//	
-//	@Test
-//	public void testb9() throws Exception {
-//		String solution = MissionImpossible.solve(grid13, "DF", false);
-//		solution = solution.replace(" ", "");
-//		assertTrue(applyPlan(grid13, solution));
-//	}
-//	
-//	@Test
-//	public void testb10() throws Exception {
-//		String solution = MissionImpossible.solve(grid14, "DF", false);
-//		solution = solution.replace(" ", "");
-//		assertTrue(applyPlan(grid14, solution));
-//	}
-//	
-//	@Test
-//	public void testb11() throws Exception {
-//		String solution = MissionImpossible.solve(grid15, "DF", false);
-//		solution = solution.replace(" ", "");
-//		assertTrue(applyPlan(grid15, solution));
-//	}
-//	
+	@Test
+	public void testa1() throws Exception {
+		String solution = MissionImpossible.solve(grid5, "BF", false);
+		solution = solution.replace(" ", "");
+		assertTrue(applyPlan(grid5, solution));
+	}
+
+	@Test
+	public void testa2() throws Exception {
+		String solution = MissionImpossible.solve(grid6, "BF", false);
+		solution = solution.replace(" ", "");
+		assertTrue(applyPlan(grid6, solution));
+	}
+
+	@Test
+	public void testa3() throws Exception {
+		String solution = MissionImpossible.solve(grid7, "BF", false);
+		solution = solution.replace(" ", "");
+		assertTrue(applyPlan(grid7, solution));
+	}
+
+	@Test
+	public void testa4() throws Exception {
+		String solution = MissionImpossible.solve(grid8, "BF", false);
+		solution = solution.replace(" ", "");
+		assertTrue(applyPlan(grid8, solution));
+	}
+
+	@Test
+	public void testa5() throws Exception {
+		String solution = MissionImpossible.solve(grid9, "BF", false);
+		solution = solution.replace(" ", "");
+		assertTrue(applyPlan(grid9, solution));
+	}
+
+	@Test
+	public void testa6() throws Exception {
+		String solution = MissionImpossible.solve(grid10, "BF", false);
+		solution = solution.replace(" ", "");
+		assertTrue(applyPlan(grid10, solution));
+	}
+
+	@Test
+	public void testa7() throws Exception {
+		String solution = MissionImpossible.solve(grid11, "BF", false);
+		solution = solution.replace(" ", "");
+		assertTrue(applyPlan(grid11, solution));
+	}
+
+	@Test
+	public void testa8() throws Exception {
+		String solution = MissionImpossible.solve(grid12, "BF", false);
+		solution = solution.replace(" ", "");
+		assertTrue(applyPlan(grid12, solution));
+	}
+
+	@Test
+	public void testa9() throws Exception {
+		String solution = MissionImpossible.solve(grid13, "BF", false);
+		solution = solution.replace(" ", "");
+		assertTrue(applyPlan(grid13, solution));
+	}
+
+	@Test
+	public void testa10() throws Exception {
+		String solution = MissionImpossible.solve(grid14, "BF", false);
+		solution = solution.replace(" ", "");
+		assertTrue(applyPlan(grid14, solution));
+	}
+
+	@Test
+	public void testa11() throws Exception {
+		String solution = MissionImpossible.solve(grid15, "BF", false);
+		solution = solution.replace(" ", "");
+		assertTrue(applyPlan(grid15, solution));
+	}
+
+	@Test
+	public void testb1() throws Exception {
+		String solution = MissionImpossible.solve(grid5, "DF", false);
+		solution = solution.replace(" ", "");
+		assertTrue(applyPlan(grid5, solution));
+	}
+
+	@Test
+	public void testb2() throws Exception {
+		String solution = MissionImpossible.solve(grid6, "DF", false);
+		solution = solution.replace(" ", "");
+		assertTrue(applyPlan(grid6, solution));
+	}
+
+	@Test
+	public void testb3() throws Exception {
+		String solution = MissionImpossible.solve(grid7, "DF", false);
+		solution = solution.replace(" ", "");
+		assertTrue(applyPlan(grid7, solution));
+	}
+
+	@Test
+	public void testb4() throws Exception {
+		String solution = MissionImpossible.solve(grid8, "DF", false);
+		solution = solution.replace(" ", "");
+		assertTrue(applyPlan(grid8, solution));
+	}
+
+	@Test
+	public void testb5() throws Exception {
+		String solution = MissionImpossible.solve(grid9, "DF", false);
+		solution = solution.replace(" ", "");
+		assertTrue(applyPlan(grid9, solution));
+	}
+
+	@Test
+	public void testb6() throws Exception {
+		String solution = MissionImpossible.solve(grid10, "DF", false);
+		solution = solution.replace(" ", "");
+		assertTrue(applyPlan(grid10, solution));
+	}
+
+	@Test
+	public void testb7() throws Exception {
+		String solution = MissionImpossible.solve(grid11, "DF", false);
+		solution = solution.replace(" ", "");
+		assertTrue(applyPlan(grid11, solution));
+	}
+
+	@Test
+	public void testb8() throws Exception {
+		String solution = MissionImpossible.solve(grid12, "DF", false);
+		solution = solution.replace(" ", "");
+		assertTrue(applyPlan(grid12, solution));
+	}
+
+	@Test
+	public void testb9() throws Exception {
+		String solution = MissionImpossible.solve(grid13, "DF", false);
+		solution = solution.replace(" ", "");
+		assertTrue(applyPlan(grid13, solution));
+	}
+
+	@Test
+	public void testb10() throws Exception {
+		String solution = MissionImpossible.solve(grid14, "DF", false);
+		solution = solution.replace(" ", "");
+		assertTrue(applyPlan(grid14, solution));
+	}
+
+	@Test
+	public void testb11() throws Exception {
+		String solution = MissionImpossible.solve(grid15, "DF", false);
+		solution = solution.replace(" ", "");
+		assertTrue(applyPlan(grid15, solution));
+	}
+
 	@Test
 	public void testc1() throws Exception {
 		String solution = MissionImpossible.solve(grid5, "UC", false);
