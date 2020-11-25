@@ -31,7 +31,7 @@ public class UCS implements QngFn {
     public Node removeFront(PriorityQueue<Node> pq) {
         problem.incrementExpandedNodes();
         Node top = pq.remove();
-        while (problem.getStateVal(top.getState()) < problem.pathCost(top, top))
+        while (problem.getStateVal(top.getState()) < top.cost)
             top = pq.remove();
         return top;
     }
@@ -42,7 +42,7 @@ public class UCS implements QngFn {
             State state = node.getState();
             if (node.depth >= 600) continue;
             int assignedValue = problem.getStateVal(state);
-            int currentValue = problem.pathCost(node, node);
+            int currentValue = node.getCost();
             if (assignedValue == -1 || currentValue < assignedValue) {
                 problem.assignStateVal(state, currentValue);
                 pq.add(node);

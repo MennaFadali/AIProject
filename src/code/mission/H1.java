@@ -18,8 +18,7 @@ public class H1 implements HeuristicFunction {
     public int getHn(Node node) {
         MissionImpossibleState state = (MissionImpossibleState) node.getState();
         int cx = state.x, cy = state.y;
-        int safeIMFs = Integer.bitCount(state.safe);
         int manhattandistance = Math.abs(cx - sx) + Math.abs(cy - sy);
-        return -(safeIMFs * 100 + manhattandistance);
+        return manhattandistance;
     }
 }
